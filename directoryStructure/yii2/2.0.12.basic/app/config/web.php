@@ -7,10 +7,11 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'vendorPath' => '../../yii2/vendor',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
+            'cookieValidationKey' => 'CHANGE_ME_selrfjk234980',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
