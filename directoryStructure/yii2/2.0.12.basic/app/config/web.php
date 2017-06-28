@@ -1,20 +1,13 @@
 <?php
 
-$params = require(__DIR__ . '/params.php');
-$db = require(__DIR__ . '/db.php');
+$common = require(__DIR__ . '/common/common.php');
 
 $config = [
     'id' => 'basic',
-    'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
-    'vendorPath' => '../../yii2/vendor',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'CHANGE_ME_selrfjk234980',
-        ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'cookieValidationKey' => 'basic-dfoi23498h3f4',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -23,23 +16,6 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
-        ],
-        'db' => $db,
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -49,8 +25,9 @@ $config = [
         ],
         */
     ],
-    'params' => $params,
 ];
+
+$config = array_merge_recursive($common, $config);
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
