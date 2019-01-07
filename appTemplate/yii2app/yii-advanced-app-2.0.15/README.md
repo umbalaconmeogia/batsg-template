@@ -132,7 +132,7 @@ Update path of */vendor* directory to */../yii2/vendor* in files below.
 
 ## Source code of new directory structure
 
-You can download the source code of new directory structure from this repository's *src* folder.
+You can download the source code of new directory structure from this [src](./src) folder.
 
 To keep the source code small, it does not contain the *vendor* directory. Run `composer install` to make it download necessary dependencies.
 
@@ -147,3 +147,4 @@ If it's difficult to install dependencies via *composer*, you can extract the *v
   to create *vendor* directory and download dependencies (if you use the source code download from this repository). If you extract the *vendor* directory from archive file, running `composer install` is not necessary.
 * If you want to install new dependencies, invoke `composer` commands in *yii2* directory, not in *app* directory.
 * Before developing with yii2 advanced application template, run `init` command in *app* directory (select environment such as Development etc). Refer [installation document](https://www.yiiframework.com/extension/yiisoft/yii2-app-advanced/doc/guide/2.0/en/start-installation) for another configuration.
+* When create a PHP project in Eclipse IDE, it's good to select *src* directory as project location, so that Eclipse can refer to the code in *vendor*. The *.gitignore* in *src* will prevent the commiting of eclipse project files to git repository.
