@@ -136,13 +136,12 @@ You can download the source code of new directory structure from this repository
 
 To keep the source code small, it does not contain the *vendor* directory. Run `composer install` to make it download necessary dependencies.
 
-If it's difficult to install dependencies via *composer*, you can extract the *vendor* directory from the [yii2 advanced application template archive file](https://github.com/yiisoft/yii2/releases/download/2.0.15/yii-advanced-app-2.0.15.tgz)
+If it's difficult to install dependencies via *composer*, you can extract the *vendor* directory from the [yii2 advanced application template archive file](https://github.com/yiisoft/yii2/releases/download/2.0.15/yii-advanced-app-2.0.15.tgz), and copy it to *yii2* directory.
 
 ## Working with this new directory structure
 
 * Go into *yii2* directory and run
   ```shell
-  composer global require "fxp/composer-asset-plugin:~1.1.1"
   composer install
   ```
   to create *vendor* directory and download dependencies (if you use the source code download from this repository). If you extract the *vendor* directory from archive file, running `composer install` is not necessary.
