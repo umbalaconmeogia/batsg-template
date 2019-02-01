@@ -1,3 +1,3 @@
 {
-    "directory" : "vendor/bower-asset"
+    "directory" : "../yii2/vendor/bower-asset"
 }
