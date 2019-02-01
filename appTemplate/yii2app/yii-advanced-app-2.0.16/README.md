@@ -57,78 +57,78 @@ The structure of the source code will be as following:
 ### Update path to *vendor* directory
 Update path of */vendor* directory to */../yii2/vendor* in files below.
 
-* File *src/app/.bowerrc*
-  ```
-  "directory" : "../yii2/vendor/bower-asset"
-  ```
-* File *src/app/backend/tests/_bootstrap.php*
-  ```php
-  require_once YII_APP_BASE_PATH . '/../yii2/vendor/autoload.php';
-  require_once YII_APP_BASE_PATH . '/../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/common/config/main.php*
-  ```php
-  'vendorPath' => dirname(dirname(__DIR__)) . '/../yii2/vendor',
-  ```
-* File *src/app/common/tests/_bootstrap.php*
-  ```php
-  require_once __DIR__ .  '/../../../yii2/vendor/autoload.php';
-  require_once __DIR__ .  '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/dev/backend/web/index-test.php*
-  ```php
-  require __DIR__ . '/../../../yii2/vendor/autoload.php';
-  require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/dev/backend/web/index.php*
-  ```php
-  require __DIR__ . '/../../../yii2/vendor/autoload.php';
-  require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/dev/frontend/web/index-test.php*
-  ```php
-  require __DIR__ . '/../../../yii2/vendor/autoload.php';
-  require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/dev/frontend/web/index.php*
-  ```php
-  require __DIR__ . '/../../../yii2/vendor/autoload.php';
-  require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/dev/yii*
-  ```php
-  require __DIR__ . '/../yii2/vendor/autoload.php';
-  require __DIR__ . '/../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/dev/yii_test*
-  ```php
-  require __DIR__ . '/../yii2/vendor/autoload.php';
-  require __DIR__ . '/../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/prod/backend/web/index.php*
-  ```php
-  require __DIR__ . '/../../../yii2/vendor/autoload.php';
-  require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/prod/frontend/web/index.php*
-  ```php
-  require __DIR__ . '/../../../yii2/vendor/autoload.php';
-  require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/environments/prod/yii*
-  ```php
-  require __DIR__ . '/../yii2/vendor/autoload.php';
-  require __DIR__ . '/../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/frontend/tests/_bootstrap.php*
-  ```php
-  require_once YII_APP_BASE_PATH . '/../yii2/vendor/autoload.php';
-  require_once YII_APP_BASE_PATH . '/../yii2/vendor/yiisoft/yii2/Yii.php';
-  ```
-* File *src/app/requirements.php*
-  ```php
-  $frameworkPath = dirname(__FILE__) . '/../yii2/vendor/yiisoft/yii2';
-  ```
+1. File *src/app/.bowerrc*
+    ```
+    "directory" : "../yii2/vendor/bower-asset"
+    ```
+1. File *src/app/backend/tests/_bootstrap.php*
+    ```php
+    require_once YII_APP_BASE_PATH . '/../yii2/vendor/autoload.php';
+    require_once YII_APP_BASE_PATH . '/../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/common/config/main.php*
+    ```php
+    'vendorPath' => dirname(dirname(__DIR__)) . '/../yii2/vendor',
+    ```
+1. File *src/app/common/tests/_bootstrap.php*
+    ```php
+    require_once __DIR__ .  '/../../../yii2/vendor/autoload.php';
+    require_once __DIR__ .  '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/dev/backend/web/index-test.php*
+    ```php
+    require __DIR__ . '/../../../yii2/vendor/autoload.php';
+    require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/dev/backend/web/index.php*
+    ```php
+    require __DIR__ . '/../../../yii2/vendor/autoload.php';
+    require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/dev/frontend/web/index-test.php*
+    ```php
+    require __DIR__ . '/../../../yii2/vendor/autoload.php';
+    require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/dev/frontend/web/index.php*
+    ```php
+    require __DIR__ . '/../../../yii2/vendor/autoload.php';
+    require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/dev/yii*
+    ```php
+    require __DIR__ . '/../yii2/vendor/autoload.php';
+    require __DIR__ . '/../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/dev/yii_test*
+    ```php
+    require __DIR__ . '/../yii2/vendor/autoload.php';
+    require __DIR__ . '/../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/prod/backend/web/index.php*
+    ```php
+    require __DIR__ . '/../../../yii2/vendor/autoload.php';
+    require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/prod/frontend/web/index.php*
+    ```php
+    require __DIR__ . '/../../../yii2/vendor/autoload.php';
+    require __DIR__ . '/../../../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/environments/prod/yii*
+    ```php
+    require __DIR__ . '/../yii2/vendor/autoload.php';
+    require __DIR__ . '/../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/frontend/tests/_bootstrap.php*
+    ```php
+    require_once YII_APP_BASE_PATH . '/../yii2/vendor/autoload.php';
+    require_once YII_APP_BASE_PATH . '/../yii2/vendor/yiisoft/yii2/Yii.php';
+    ```
+1. File *src/app/requirements.php*
+    ```php
+    $frameworkPath = dirname(__FILE__) . '/../yii2/vendor/yiisoft/yii2';
+    ```
 
 ## Source code of new directory structure
 
