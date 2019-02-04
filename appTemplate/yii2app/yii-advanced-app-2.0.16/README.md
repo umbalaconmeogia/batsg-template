@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the source code template of yii2 application, modified from the original yii2 advanced application template version 2.0.15.
+This is the source code template of yii2 application, modified from the original yii2 advanced application template.
 
 What I do in this modified version is moving the vendor folder outsite of the main application directory.
 
@@ -134,7 +134,11 @@ Update path of */vendor* directory to */../yii2/vendor* in files below.
 
 You can download the source code of new directory structure from this [src](./src) folder.
 
-To keep the source code small, it does not contain the *vendor* directory. Run `composer install` to make it download necessary dependencies.
+To keep the source code small, it does not contain the *vendor* directory. Run the commands bellow to make it download necessary dependencies.
+```shell
+composer global require "fxp/composer-asset-plugin"
+composer install
+```
 
 If it's difficult to install dependencies via *composer*, you can extract the *vendor* directory from the [yii2 advanced application template archive file](https://github.com/yiisoft/yii2/releases/download/2.0.15/yii-advanced-app-2.0.15.tgz), and copy it to *yii2* directory.
 
