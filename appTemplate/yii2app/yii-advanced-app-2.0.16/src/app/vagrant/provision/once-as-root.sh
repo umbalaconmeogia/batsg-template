@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /app/vagrant/provision/common.sh
+source /app/app/vagrant/provision/common.sh
 
 #== Import script args ==
 
@@ -20,12 +20,15 @@ debconf-set-selections <<< "mysql-community-server mysql-community-server/root-p
 debconf-set-selections <<< "mysql-community-server mysql-community-server/re-root-pass password \"''\""
 echo "Done!"
 
+#Add ondrej/php which has PHP 7.3 package and other required PHP extensions.
+#add-apt-repository ppa:ondrej/php -y
+
 info "Update OS software"
 apt-get update
 apt-get upgrade -y
 
 info "Install additional software"
-apt-get install -y php7.0-curl php7.0-cli php7.0-intl php7.0-mysqlnd php7.0-gd php7.0-fpm php7.0-mbstring php7.0-xml unzip nginx mysql-server-5.7 php.xdebug
+apt-get install -y php7.2-curl php7.2-cli php7.2-intl php7.2-mysqlnd php7.2-gd php7.2-fpm php7.2-mbstring php7.2-xml php7.2-zip unzip nginx mysql-server-5.7 php.xdebug
 
 info "Configure MySQL"
 sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
@@ -36,10 +39,10 @@ mysql -uroot <<< "FLUSH PRIVILEGES"
 echo "Done!"
 
 info "Configure PHP-FPM"
-sed -i 's/user = www-data/user = vagrant/g' /etc/php/7.0/fpm/pool.d/www.conf
-sed -i 's/group = www-data/group = vagrant/g' /etc/php/7.0/fpm/pool.d/www.conf
-sed -i 's/owner = www-data/owner = vagrant/g' /etc/php/7.0/fpm/pool.d/www.conf
-cat << EOF > /etc/php/7.0/mods-available/xdebug.ini
+sed -i 's/user = www-data/user = vagrant/g' /etc/php/7.2/fpm/pool.d/www.conf
+sed -i 's/group = www-data/group = vagrant/g' /etc/php/7.2/fpm/pool.d/www.conf
+sed -i 's/owner = www-data/owner = vagrant/g' /etc/php/7.2/fpm/pool.d/www.conf
+cat << EOF > /etc/php/7.2/mods-available/xdebug.ini
 zend_extension=xdebug.so
 xdebug.remote_enable=1
 xdebug.remote_connect_back=1
@@ -53,7 +56,7 @@ sed -i 's/user www-data/user vagrant/g' /etc/nginx/nginx.conf
 echo "Done!"
 
 info "Enabling site configuration"
-ln -s /app/vagrant/nginx/app.conf /etc/nginx/sites-enabled/app.conf
+ln -s /app/app/vagrant/nginx/app.conf /etc/nginx/sites-enabled/app.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
