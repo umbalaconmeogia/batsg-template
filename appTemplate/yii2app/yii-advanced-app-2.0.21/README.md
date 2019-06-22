@@ -34,8 +34,6 @@ The structure of the source code will be as following:
      | -- codeception.yml
      | -- init
      | -- init.bat
-     | -- LICENSE.md
-     | -- README.md
      | -- requirements.php
      | -- Vagrantfile
      | -- yii.bat
@@ -45,22 +43,23 @@ The structure of the source code will be as following:
      | -- .gitignore
      | -- composer.json
      | -- composer.lock
+     | -- LICENSE.md
+     | -- README.md
 ```
 
 ### Move *vendor* diretory outside *app* directory
 
 * Create *yii2* directory at the same level of *app* directory.
-* Move *.bowerrc*, *composer.json*, *composer.lock* and *vendor* from *app* into this *yii2* directory.
+* Move *composer.json*, *composer.lock* and *vendor* from *app* into this *yii2* directory.
+* Also move *.bowerrc*, *LICENSE.md*, *README.md* from *app* into this *yii2* directory.
 * Copy *.gitignore* from *app* to *yii2* directory.
 * Update path to *vendor* directory in relative files as described below.
 
 ### Update path to *vendor* directory
 Update path of */vendor* directory to */../yii2/vendor* in files below.
 
-1. File *src/app/.bowerrc*
-    ```
-    "directory" : "../yii2/vendor/bower-asset"
-    ```
+You can perform this work by running *genAppStructure.2.0.21.php*, which is put in the same directory with this README.md file.
+
 1. File *src/app/backend/tests/_bootstrap.php*
     ```php
     require_once YII_APP_BASE_PATH . '/../yii2/vendor/autoload.php';
@@ -127,7 +126,8 @@ Update path of */vendor* directory to */../yii2/vendor* in files below.
     ```
 1. File *src/app/requirements.php*
     ```php
-    $frameworkPath = dirname(__FILE__) . '/../yii2/vendor/yiisoft/yii2';
+		dirname(__FILE__) . '/../yii2/vendor/yiisoft/yii2',
+		dirname(__FILE__) . '/../../../yii2/vendor/yiisoft/yii2',
     ```
 
 ## Source code of new directory structure
