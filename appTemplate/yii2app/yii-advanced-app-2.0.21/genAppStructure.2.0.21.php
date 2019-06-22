@@ -66,7 +66,7 @@ $filesToUpdate = [
 foreach ($filesToUpdate as $file => $patterns) {
     $fileContent = file_get_contents($file);
     foreach ($patterns as $searchText) {
-        $replaceText = str_replace('/vendor/', '/../yii2/vendor/', $searchText);
+        $replaceText = str_replace('/vendor', '/../yii2/vendor', $searchText);
         $fileContent = str_replace($searchText, $replaceText, $fileContent, $count);
         if (!$count) {
             echo "ERROR: Don't find $searchText in $file\n";
