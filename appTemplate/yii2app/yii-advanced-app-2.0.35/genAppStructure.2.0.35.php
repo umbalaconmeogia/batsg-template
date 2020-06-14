@@ -25,7 +25,7 @@ $filesToUpdate = [
         "require __DIR__ . '/../../vendor/autoload.php';",
         "require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';",
     ],
-    'src/app/environments/dev/frontend/web/index-test.php' => [    
+    'src/app/environments/dev/frontend/web/index-test.php' => [
         "require __DIR__ . '/../../vendor/autoload.php';",
         "require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';",
     ],
@@ -58,6 +58,7 @@ $filesToUpdate = [
         "require_once YII_APP_BASE_PATH . '/vendor/yiisoft/yii2/Yii.php';",
     ],
     'src/app/requirements.php' => [
+        "frameworkPath = dirname(__FILE__) . '/vendor/yiisoft/yii2';",
         "dirname(__FILE__) . '/vendor/yiisoft/yii2',",
         "dirname(__FILE__) . '/../../vendor/yiisoft/yii2',",
     ],

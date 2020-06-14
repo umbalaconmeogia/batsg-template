@@ -58,7 +58,7 @@ The structure of the source code will be as following:
 ### Update path to *vendor* directory
 Update path of */vendor* directory to */../yii2/vendor* in files below.
 
-You can perform this work by running *genAppStructure.2.0.21.php*, which is put in the same directory with this README.md file.
+You can perform this work by running *genAppStructure.2.0.35.php*, which is put in the same directory with this README.md file.
 
 1. File *src/app/backend/tests/_bootstrap.php*
     ```php
@@ -126,6 +126,7 @@ You can perform this work by running *genAppStructure.2.0.21.php*, which is put 
     ```
 1. File *src/app/requirements.php*
     ```php
+        $frameworkPath = dirname(__FILE__) . '/vendor/yiisoft/yii2';
 		dirname(__FILE__) . '/../yii2/vendor/yiisoft/yii2',
 		dirname(__FILE__) . '/../../../yii2/vendor/yiisoft/yii2',
     ```
@@ -140,7 +141,7 @@ composer global require "fxp/composer-asset-plugin"
 composer install
 ```
 
-If it's difficult to install dependencies via *composer*, you can extract the *vendor* directory from the [yii2 advanced application template archive file](https://github.com/yiisoft/yii2/releases/download/2.0.15/yii-advanced-app-2.0.15.tgz), and copy it to *yii2* directory.
+If it's difficult to install dependencies via *composer*, you can extract the *vendor* directory from the [yii2 advanced application template archive file](https://github.com/yiisoft/yii2/releases/download/2.0.35/yii-advanced-app-2.0.35.tgz), and copy it to *yii2* directory.
 
 ## Working with this new directory structure
 
